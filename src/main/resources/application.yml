@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: dev
+
+client:
+  api:
+    url: ${API_URL}
+    key: ${API_KEY}
+
+management:
+  endpoint:
+    loggers:
+      enabled: true
+    health:
+      show-details: ALWAYS
+    metrics:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,metrics,info,health,loggers
+  health:
+    defaults:
+      enabled: false
+    mail:
+      enabled: false
