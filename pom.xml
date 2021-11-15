@@ -16,8 +16,8 @@
 	<description>Project to display football match standings</description>
 	<properties>
 		<java.version>1.8</java.version>
-		<docker.image.build.project>dev</docker.image.build.project>
-		<docker.registry.url></docker.registry.url>
+		<docker.image.build.project>soccer-standings</docker.image.build.project>
+		<docker.registry.url>https://index.docker.io/v2/</docker.registry.url>
 		<docker.image.name>${docker.registry.url}/${docker.image.build.project}/soccer-standings</docker.image.name>
 	</properties>
 	<dependencies>
