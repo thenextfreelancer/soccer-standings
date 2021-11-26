@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,7 @@ public class LeagueService
    @Autowired
    private LeagueClient client;
 
+   @Cacheable("league")
    public List<League> get() throws Exception
    {
       List<League> leagues = Lists.newArrayList();

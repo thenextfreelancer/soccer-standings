@@ -12,6 +12,7 @@ Ext.define('Fiddle.view.UserForm', {
     countryId: null,
     leagueId: null,
     teamId: null,
+    offlineMode: 0,
     initComponent : function() {
         var me = this;
         

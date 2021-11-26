@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,7 @@ public class TeamService
    @Autowired
    private TeamStandingClient standingClient;
 
+   @Cacheable("league")
    public List<Team> getByLeagueId(int leagueId)
    {
       List<Team> teams = Lists.newArrayList();
@@ -46,6 +48,7 @@ public class TeamService
       return teams;
    }
 
+   @Cacheable("teamstanding")
    public TeamStanding getTeamStandings(int leagueId, int teamId)
    {
       TeamStanding ts = null;
