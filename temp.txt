@@ -1,0 +1,40 @@
+https://apifootball.com/documentation/#Standings
+
+https://apiv3.apifootball.com/?action=get_standings&league_id=302&APIkey=xxxxxxxxxxxxxx
+
+key:  9bb66184e0c8145384fd2cc0f7b914ada57b4e8fd2e4d6d586adcc27c257a978
+
+
+
+Swagger
+http://localhost:8080/swagger-ui.html
+
+
+APIs
+http://localhost:8080/team?league_id=149
+
+http://localhost:8080/team/standings?league_id=149&team_id=2929
+
+http://localhost:8080/country
+
+http://localhost:8080/league?country_id=44
+
+UI Access
+http://localhost:8080
+
+
+
+
+Saving docker image
+docker save -o soccer-standings.image.tar 7de3c66a0e13
+
+
+
+Build Image
+./mvnw spring-boot:build-image
+
+Docker tag
+docker tag soccer-standings:1.0.0-SNAPSHOT thenextfreelancer/soccer-standings:1.0.0-SNAPSHOT
+
+docker run --env API_URL=https://apiv3.apifootball.com/ --env API_KEY=9bb66184e0c8145384fd2cc0f7b914ada57b4e8fd2e4d6d586adcc27c257a978 --network="host" -it thenextfreelancer/soccer-standings:1.0.0-SNAPSHOT
+
